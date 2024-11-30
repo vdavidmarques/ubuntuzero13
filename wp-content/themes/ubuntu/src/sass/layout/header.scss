@@ -1,0 +1,88 @@
+@import "../helpers/variables.scss";
+@import "../helpers/mixins.scss";
+@import "../helpers/placeholder.scss";
+
+.header {
+    .menu-icon{
+        width: 2.5rem;
+        height: 2.5rem;
+        position: absolute;
+        top: 2.25rem;
+        right: 2.5rem;
+        z-index: 10;
+        cursor: pointer;
+    }
+  &--container {
+    display: none;
+
+
+    &--branding {
+      .custom-logo {
+        max-width: 200px;
+        object-fit: contain;
+      }
+
+      .open-menu-mobile {
+        @media (min-width: $breakpoint-xl) {
+          display: none;
+        }
+
+        .bg-menu-mobile {
+          background: url(../../dist/icons/menu-icon.svg);
+          width: 2.0625rem;
+          height: 1.3125rem;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          overflow: hidden;
+          padding-left: 1.5rem;
+          text-indent: -624.9375rem;
+          border: none;
+        }
+      }
+    }
+
+    &--icons {
+      margin-top: 2.5rem;
+
+      .menu-items {
+        nav#menu .main-menu {
+          li.menu-item a {
+            font-size: 16px;
+            color: $gray;
+          }
+        }
+      }
+    }
+
+    &.openned {
+        position: absolute;
+        @extend %modal-openned;
+        flex-direction: column;
+        right: 0;
+        padding: 20px;
+        background-color: $fColorDark;
+        width: 100%;
+
+        @media screen and (min-width: $breakpoint-lg) {
+          width: 40%;
+        }
+
+        nav#menu {
+          .main-menu {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1.25rem;
+          }
+        }
+
+        .bg-close-menu-mobile {
+          width: 2.25rem;
+          height: 2.25rem;
+          @extend %bg-close;
+          background-image: url(../../dist/icons/close-icon.svg);
+          background-color: transparent;
+        }
+    }
+  }
+}

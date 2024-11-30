@@ -1,0 +1,157 @@
+@import "../../helpers/variables.scss";
+@import "../../helpers/mixins.scss";
+@import "../../helpers/placeholder.scss";
+
+.main-banner {
+  @media screen and (min-width: $breakpoint-lg) {
+    display: grid;
+    @include grid-cols-12;
+  }
+
+  .custom-logo-link {
+    @media screen and (min-width: $breakpoint-lg) {
+      @include col-span-12;
+    }
+  }
+
+  .bg-blue {
+    @extend %bg-blue;
+    border-radius: 2.5rem 2.5rem 2.5rem 0;
+  }
+
+  .main-photo {
+    height: 25rem;
+    object-fit: contain;
+    position: absolute;
+    top: 1.25rem;
+    pointer-events: none;
+    left: 0;
+    @media screen and (min-width: $breakpoint-md) {
+      height: 37.5rem;
+    }
+    @media screen and (min-width: $breakpoint-lg) {
+      height: 59.375rem;
+    }
+  }
+
+  &--infos {
+    margin-top: 18.875rem;
+
+    @media screen and (min-width: $breakpoint-md) {
+      margin-top: 22.375rem;
+    }
+
+    @media screen and (min-width: $breakpoint-lg) {
+      margin-top: 5rem;
+    }
+
+    @media screen and (min-width: $breakpoint-lg) {
+      @include col-span-5;
+    }
+
+    &--image {
+      position: relative;
+      border-radius: 2.5rem 2.5rem 2.5rem 0;
+      overflow: hidden;
+
+      .image {
+        z-index: 10;
+        position: relative;
+      }
+
+      @media screen and (min-width: $breakpoint-lg) {
+        max-width: 22.1875rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  &--supporter {
+    position: relative;
+    overflow: hidden;
+    margin-top: 5rem;
+
+    @media screen and (min-width: $breakpoint-lg) {
+      @include col-span-6;
+      @include col-start-7;
+      display: flex;
+      align-items: center;
+      height: fit-content;
+      padding-left: 1.5625rem;
+      overflow: visible;
+    }
+
+    @media screen and (min-width: $breakpoint-1_5xl) {
+      @include col-span-5;
+      @include col-start-8;
+    }
+
+    .bg-blue {
+      @media screen and (min-width: $breakpoint-lg) {
+        height: 100%;
+        border-radius: 2.5rem 2.5rem 0 2.5rem;
+      }
+    }
+    &--content {
+      @media screen and (min-width: $breakpoint-lg) {
+        min-width: 14.0625rem;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 10px;
+      }
+      .tag {
+        text-transform: uppercase;
+        font-family: $font-rubik;
+        font-size: 0.875rem;
+        color: $fColorDark;
+        font-weight: 900;
+        @extend %z-index;
+      }
+
+      .title {
+        h1,
+        h2,
+        h3,
+        h4 {
+          text-transform: uppercase;
+          font-family: $font-rubik;
+          font-size: 20px;
+          color: $fColorDark;
+          font-weight: 900;
+          max-width: 7.3125rem;
+        }
+
+        p {
+          line-height: 1.0625rem;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        p {
+          @media screen and (min-width: $breakpoint-lg) {
+            color: $white;
+          }
+          @extend %z-index;
+        }
+      }
+
+      .button {
+        margin-top: 0.625rem;
+        display: block;
+        @extend %z-index;
+      }
+    }
+
+    &--image {
+      z-index: 20;
+      position: relative;
+      @media screen and (min-width: $breakpoint-lg) {
+        height: 330px;
+        right: 3.75rem;
+      }
+    }
+  }
+}
