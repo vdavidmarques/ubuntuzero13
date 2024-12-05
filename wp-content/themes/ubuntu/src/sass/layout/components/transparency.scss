@@ -1,0 +1,150 @@
+@import "../../helpers/variables.scss";
+@import "../../helpers/mixins.scss";
+@import "../../helpers/placeholder.scss";
+
+.transparency {
+  background-color: $fColorDark;
+  color: $white;
+  padding: 2.5rem 1rem;
+  display: grid;
+  @include grid-cols-12;
+  position: relative;
+
+  @media (min-width: $breakpoint-lg) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    padding: 6.25rem 0;
+  }
+
+  &::before {
+    @extend %before-aside-graphic;
+    @extend %aside-graphic-blue-light-left;
+  }
+
+  &::after{
+    @extend %before-aside-graphic;
+    @extend %aside-graphic-blue-light-left;
+    right: -0.3125rem;
+    left: inherit!important;
+    transform: rotate(180deg);
+  }
+
+  &--header {
+    margin-bottom: 2.5rem;
+    @extend %columns-transparency;
+    @media screen and (min-width: $breakpoint-xl) {
+      margin-bottom: 3.75rem;
+    }
+
+    .title {
+      @include col-span-12;
+      font-size: 1.5625rem;
+      font-weight: 900;
+      color: $fColor;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      strong {
+        color: $white;
+      }
+
+      @media screen and (min-width: $breakpoint-xl) {
+        font-size: 2.5rem;
+        line-height: 3.0625rem;
+        @include col-span-4;
+        margin-bottom: 0;
+      }
+    }
+    .desc {
+      @include col-span-12;
+      font-weight: 600;
+
+      @media screen and (min-width: $breakpoint-xl) {
+        @include col-span-6;
+        font-size: 1.25rem;
+        line-height: 1.8125rem;
+      }
+    }
+  }
+
+  &--contacts {
+    margin-bottom: 2.5rem;
+    @extend %columns-transparency;
+
+    .social-network {
+      @include col-span-12;
+      display: flex;
+      flex-direction: column;
+      row-gap: 2.125rem;
+
+      @media screen and (min-width: $breakpoint-xl) {
+        @include col-span-4;
+      }
+
+      .icon {
+        @extend %transparency--contacts-icons;
+        color: $white;
+        font-weight: 600;
+        font-size: 1.25rem;
+
+        &.instagram {
+          &::before {
+            background-image: url("../icons/instagram.svg");
+          }
+        }
+        &.linkedin {
+          &::before {
+            background-image: url("../icons/linkedin.svg");
+          }
+        }
+      }
+    }
+
+    .payments {
+      @include col-span-12;
+      display: flex;
+      flex-direction: column;
+      row-gap: 2.125rem;
+      margin-top: 2.5rem;
+
+      @media (min-width: $breakpoint-xl) {
+        @include col-span-6;
+        flex-direction: row;
+        column-gap: 40px;
+        margin-top: 0;
+      }
+
+      .tag {
+        text-transform: uppercase;
+        font-weight: 900;
+        font-family: $font-rubik;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+
+        @media (min-width: $breakpoint-xl) {
+          font-size: 1.875rem;
+        }
+      }
+
+      .icon {
+        @extend %transparency--contacts-icons;
+      }
+
+      .cnpj .icon {
+        &::before {
+          width: 2.8125rem;
+          height: 2.8125rem;
+          background-image: url("../icons/cnpj.svg");
+        }
+      }
+
+      .email .icon {
+        &::before {
+          background-image: url("../icons/email.svg");
+        }
+      }
+    }
+  }
+}

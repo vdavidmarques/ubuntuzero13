@@ -6,6 +6,6 @@
     include 'components/main-banner.php';
     include 'components/our-mission.php';
     include 'components/supporter.php';
-    include 'components/remarkable.php';
     include 'components/transparency.php';
+    include 'components/remarkable.php';
     get_footer();

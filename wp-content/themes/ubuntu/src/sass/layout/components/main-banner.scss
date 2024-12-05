@@ -3,13 +3,13 @@
 @import "../../helpers/placeholder.scss";
 
 .main-banner {
-  @media screen and (min-width: $breakpoint-lg) {
+  @media screen and (min-width: $breakpoint-xl) {
     display: grid;
     @include grid-cols-12;
   }
 
   .custom-logo-link {
-    @media screen and (min-width: $breakpoint-lg) {
+    @media screen and (min-width: $breakpoint-xl) {
       @include col-span-12;
     }
   }
@@ -29,7 +29,7 @@
     @media screen and (min-width: $breakpoint-md) {
       height: 37.5rem;
     }
-    @media screen and (min-width: $breakpoint-lg) {
+    @media screen and (min-width: $breakpoint-xl) {
       height: 59.375rem;
     }
   }
@@ -41,11 +41,15 @@
       margin-top: 22.375rem;
     }
 
-    @media screen and (min-width: $breakpoint-lg) {
+    @media screen and (min-width: $breakpoint-xl) {
       margin-top: 5rem;
     }
 
-    @media screen and (min-width: $breakpoint-lg) {
+    @media screen and (min-width: $breakpoint-xl) {
+      @include col-span-4;
+    }
+
+    @media screen and (min-width: $breakpoint-1_5xl) {
       @include col-span-5;
     }
 
@@ -53,13 +57,14 @@
       position: relative;
       border-radius: 2.5rem 2.5rem 2.5rem 0;
       overflow: hidden;
+      margin-top: 1.25rem;
 
       .image {
         z-index: 10;
         position: relative;
       }
 
-      @media screen and (min-width: $breakpoint-lg) {
+      @media screen and (min-width: $breakpoint-xl) {
         max-width: 22.1875rem;
         margin-left: auto;
         margin-right: auto;
@@ -72,7 +77,7 @@
     overflow: hidden;
     margin-top: 5rem;
 
-    @media screen and (min-width: $breakpoint-lg) {
+    @media screen and (min-width: $breakpoint-xl) {
       @include col-span-6;
       @include col-start-7;
       display: flex;
@@ -88,18 +93,19 @@
     }
 
     .bg-blue {
-      @media screen and (min-width: $breakpoint-lg) {
-        height: 100%;
+      @media screen and (min-width: $breakpoint-xl) {
+        height: 90%!important;
         border-radius: 2.5rem 2.5rem 0 2.5rem;
       }
     }
     &--content {
-      @media screen and (min-width: $breakpoint-lg) {
+      @media screen and (min-width: $breakpoint-xl) {
         min-width: 14.0625rem;
         display: flex;
         flex-wrap: wrap;
         row-gap: 10px;
       }
+
       .tag {
         text-transform: uppercase;
         font-family: $font-rubik;
@@ -119,7 +125,9 @@
           font-size: 20px;
           color: $fColorDark;
           font-weight: 900;
-          max-width: 7.3125rem;
+          @media screen and (min-width: $breakpoint-1_5xl) {
+            max-width: 7.3125rem;
+          }
         }
 
         p {
@@ -131,7 +139,7 @@
         h3,
         h4,
         p {
-          @media screen and (min-width: $breakpoint-lg) {
+          @media screen and (min-width: $breakpoint-xl) {
             color: $white;
           }
           @extend %z-index;
@@ -148,7 +156,7 @@
     &--image {
       z-index: 20;
       position: relative;
-      @media screen and (min-width: $breakpoint-lg) {
+      @media screen and (min-width: $breakpoint-xl) {
         height: 330px;
         right: 3.75rem;
       }

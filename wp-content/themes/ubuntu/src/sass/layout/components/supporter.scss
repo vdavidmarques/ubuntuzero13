@@ -1,0 +1,125 @@
+@import "../../helpers/variables.scss";
+@import "../../helpers/mixins.scss";
+@import "../../helpers/placeholder.scss";
+
+.supporter{
+    display: grid;
+    width: 100%;
+    @include grid-cols-12;
+    position: relative;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    
+    @media screen and (min-width: $breakpoint-lg) {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+    
+    @media screen and (min-width: $breakpoint-xl) {
+        column-gap: 5rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    &::before{
+        @extend %before-aside-graphic;
+        @extend %aside-graphic-blue-light-left;
+    }
+
+    &--content{
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.5rem;
+        @include col-span-12;
+        position: relative;
+
+        @media screen and (min-width: $breakpoint-xl) {
+            @include col-span-4;
+            @include col-start-2;
+            justify-content: center;
+        }
+
+        &--title{        
+            h1,h2,h3,h4,h5{
+                text-transform: uppercase;
+                font-family: $font-rubik;
+                color: $fColor;
+                font-size: 1.5625rem;
+                font-weight: 900;
+                margin-bottom: 16px;
+                @media screen and (min-width: $breakpoint-xl) {
+                    font-size: 2.9375rem;
+                    line-height: 3rem;
+                    margin-bottom: 1.875rem;
+                }
+                
+                strong{
+                    color: $fColorDark;
+                }
+            }
+
+            p{
+                font-weight: 600;
+            }
+        }
+
+        &--lists{
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            row-gap: 1.625rem;
+            
+            .item{
+                padding-left: 2.1875rem;
+                position: relative;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-image: url('../icons/plus-circle.svg');
+                    width: 1.625rem;
+                    height: 1.625rem;
+                    margin-right: 1.25rem;
+                }
+            }
+        }
+
+        &--contact{
+            display: flex;
+            flex-direction: column;
+            row-gap: 1.25rem;
+
+            .tag-message{
+                text-transform: uppercase;
+                font-size: 1.1875rem;
+                font-weight: 900
+            }
+        }
+    }
+
+    &--image{
+        @include col-span-12;
+        margin-top: 2.5rem;
+        height: 21.875rem;
+        border-radius: 5rem;
+        overflow: hidden;
+        position: relative;
+
+        &::before{
+            @extend %before-aside-graphic;
+            background-image: url('../icons/aside-graphic-white-center.svg');
+            background-position-y: center;
+            height: 100%;
+         }
+
+        @media screen and (min-width: $breakpoint-xl) {
+            @include col-span-7;
+            border-radius: inherit;
+            margin-top: 0;
+            height: 100%;
+            min-height: 46.875rem;
+        }
+    }
+}

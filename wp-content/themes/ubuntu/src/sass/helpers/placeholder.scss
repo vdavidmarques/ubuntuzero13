@@ -22,18 +22,66 @@
   cursor: pointer;
 }
 
-%bg-blue{
+%bg-blue {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 12.5rem;
-  background-image: linear-gradient($fColorLight, $fColorMedium);
+  background-image: $blue-gradient;
 }
 
-%z-index{
+%z-index {
   @media screen and (min-width: $breakpoint-lg) {
     z-index: 10;
     position: relative;
+  }
+}
+
+%before-aside-graphic {
+  @media screen and (min-width: $breakpoint-xl) {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -5px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 3.5rem;
+  }
+}
+
+%aside-graphic-blue-light-left{
+  background-image: url('../icons/aside-graphic-blue-light-left.svg');
+  height: 14.375rem;
+}
+
+%columns-transparency {
+  @include col-span-12;
+  @media screen and (min-width: $breakpoint-xl) {
+    @include col-span-11;
+    @include col-start-2;
+    display: grid;
+    @include grid-cols-11;
+    column-gap: 2.5rem;
+  }
+}
+
+%transparency--contacts-icons {
+  padding-left: 3.4375rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 2.5rem;
+
+  &::before {
+    content: "";
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    background-size: contain;
+    left: 0;
+    top: 0;
+    background-repeat: no-repeat;
   }
 }

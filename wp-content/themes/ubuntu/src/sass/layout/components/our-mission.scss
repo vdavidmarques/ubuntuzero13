@@ -1,0 +1,138 @@
+@import "../../helpers/variables.scss";
+@import "../../helpers/mixins.scss";
+@import "../../helpers/placeholder.scss";
+
+.our-mission{
+    padding: 5rem 0;
+
+    &--header{
+        display: grid;
+        @include grid-cols-12;
+
+        &--title{
+            @include col-span-12;
+            font-size: 1.5625rem;
+            font-weight: 900;
+            color: $fColor;
+            font-family: $font-rubik;
+            text-transform: uppercase;
+            margin-bottom: 0.625rem;
+            @media screen and (min-width: $breakpoint-lg) {
+                @include col-span-3;
+                font-size: 2.8125rem;
+                line-height: 3rem;
+            }
+           
+            
+            strong{
+                color: $fColorDark;
+                @media screen and (min-width: $breakpoint-lg) {
+                    font-size: 3.125rem;
+                }
+            }
+        }
+
+        &--content{
+            @include col-span-12;
+            @media screen and (min-width: $breakpoint-lg) {
+                @include col-span-7;
+                @include col-start-5;
+                font-size: 1.25rem;
+                font-weight: 600;
+            }
+            
+            @media screen and (min-width: $breakpoint-xl) {
+                @include col-span-6;
+            }
+        }
+    }
+
+    &--content{
+        margin-top: 60px;
+        @media screen and (min-width: $breakpoint-xl) {
+            display: grid;
+            @include grid-cols-12;
+            column-gap: 1.25rem;
+            align-items: flex-end;
+            margin-top: -12.5rem;
+        }
+
+        &--logo{
+            @media screen and (min-width: $breakpoint-xl) {
+                @include col-span-4;
+                display: flex;
+                align-items: center;
+
+                .custom-logo{
+                    object-fit: contain;
+                }
+            }
+        }
+
+        &--image{  
+            display: flex;
+            flex-direction: column-reverse;
+        
+            
+            @media screen and (min-width: $breakpoint-xl) {
+                @include col-span-8;
+                display: grid;
+                @include grid-cols-8;
+                align-items: flex-end;
+                position: relative;
+            }   
+            
+            .bg-blue{
+                @extend %bg-blue;
+                border-radius: 2.5rem;
+            }
+
+            .image{
+                z-index: 10;
+                object-fit: contain;
+                @media screen and (min-width: $breakpoint-xl) {
+                    overflow: visible;
+                    width: auto;
+                    height: 40.1875rem;
+                    @include col-span-2;
+                }
+            }
+
+            .content  {
+                background-image: $blue-gradient;
+                border-radius: 2.5rem;
+                color: $white;
+                font-weight: bold;
+                padding:  4.375rem 2.5rem 2.5rem 1.875rem;
+                margin-top: -4.6875rem;
+
+                @media screen and (min-width: $breakpoint-xl) {
+                    @include col-span-5;
+                    background-image: inherit;
+                    border-radius: inherit;
+                    height: fit-content;
+                    position: relative;
+                    z-index: 20;
+                    margin-top: 0;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    display: flex;
+                    align-items: center;
+                }
+
+                p{
+                    z-index: 10;
+                    position: relative;
+                }
+
+             
+            }
+
+        }
+    }
+    .bg-blue, .our-mission--content--logo, .our-mission--content--image .content{
+        @media screen and (min-width: $breakpoint-xl) {
+            min-height: 18.75rem;
+        }
+    }
+}
