@@ -208,14 +208,16 @@ body {
   overflow-x: hidden;
   color: $fColorDark;
   background-color: $fColor;
-  padding: 3.125rem 1.25rem;
+  padding: 50px 20px;
   
   @media (min-width: $breakpoint-lg){
-    padding: 5rem 4.375rem;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 1.875rem;
   }
 }
 
-main{
+.main{
   background-color: $white;
   margin-top: 3.25rem;
   border-radius: 2.5rem;
@@ -359,6 +361,13 @@ img {
   }
 }
 
-.overflow-hidde{
+.overflow-hidden{
   overflow: hidden;
+}
+
+.feed-instagram{
+  padding: 3.75rem 0;
+  @media screen and (min-width: $breakpoint-xl) {
+    padding: 6.25rem 0;
+  }
 }

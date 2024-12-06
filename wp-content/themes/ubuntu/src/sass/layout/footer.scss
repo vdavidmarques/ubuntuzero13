@@ -2,45 +2,67 @@
 @import "../helpers/mixins.scss";
 
 footer {
+  padding-bottom: 2.5rem;
+  @media screen and (min-width: $breakpoint-xl) {
+    padding-bottom: 5rem;
+  }
 
-  .wpp-float {
-    width: 2.5rem;
-    height: 2.5rem;
+  .custom-logo{
+    width: 18.75rem;
+    height: auto;
     object-fit: contain;
-    position: fixed;
-    z-index: 50;
-    animation: bounce 1s infinite;
-    bottom: 100px;
-    right: 1.25rem;
-    
-    @media screen and (min-width: $breakpoint-lg) {
-      right: 2.5rem;
-      bottom: 9.375rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (min-width: $breakpoint-xl) {
+      width: 25rem;
+    }
+  }
+
+  .footer--nav .main-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1.25rem;
+    margin-top: 1.5625rem;
+
+    a{
+      color: $fColor;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-family: $font-rubik;
+    }
+
+    @media screen and (min-width: $breakpoint-xl) {
+      flex-direction: row;
+      column-gap: 1.25rem;
     }
   }
   
-  .scroll-to-top-btn {
-    background-position: center;
-    cursor: pointer;
-    overflow: hidden;
-    padding-left: 1.5rem;
-    text-indent: -624.9375rem;
-    border: none;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    position: fixed;
-    bottom: 2.5rem;
-    right: 1.875rem;
-    background: url("../../library/icons/up-arrow.svg");
-    width: 1.875rem;
-    height: 1.875rem;
-    object-fit: contain;
-    z-index: 50;
-  
-    @media screen and (min-width: $breakpoint-lg) {
-      right: 2.5rem;
-      bottom: 5rem;
-    }
+}
+.copyright{
+  margin-top: 2.1875rem;
+  font-size: 0.75rem;
+  color: $white;
+  a{
+    color: $white;
+  }
+}
+
+.scroll-top-icon .icon{
+  background-position: center;
+  cursor: pointer;
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  object-fit: contain;
+  z-index: 50;
+
+  @media screen and (min-width: $breakpoint-xl) {
+    right: 40px;
+    bottom: 80px;
   }
 }
 

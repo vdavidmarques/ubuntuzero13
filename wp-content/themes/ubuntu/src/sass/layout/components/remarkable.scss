@@ -2,48 +2,134 @@
 @import "../../helpers/mixins.scss";
 @import "../../helpers/placeholder.scss";
 
-.remarkable{
-    padding: 2.5rem 0;
+.remarkable {
+  padding: 2.5rem 0;
+
+  @media screen and (min-width: $breakpoint-xl) {
+    padding: 6.25rem 0;
+  }
+
+  &--header {
+    display: grid;
+    @include grid-cols-12;
+    margin-bottom: 2.5rem;
 
     @media screen and (min-width: $breakpoint-xl) {
-        padding: 6.25rem 0;
+      margin-bottom: 5rem;
+    }
+    .title {
+      @include col-span-12;
+      font-size: 1.5625rem;
+      font-weight: 900;
+      color: $fColor;
+      text-transform: uppercase;
+
+      strong {
+        color: $fColorDark;
+      }
+
+      @media screen and (min-width: $breakpoint-xl) {
+        @include col-span-4;
+        font-size: 2.5rem;
+        line-height: 3.0625rem;
+      }
     }
 
-    &--header{
-        display: grid;
-        @include grid-cols-12;
-        margin-bottom: 2.5rem;
+    .desc {
+      @include col-span-12;
+      font-weight: 600;
 
-        @media screen and (min-width: $breakpoint-xl) {
-            margin-bottom: 5rem;
-        }
-        .title{
-            @include col-span-12;
-            font-size: 1.5625rem;
-            font-weight: 900;
-            color: $fColor;
-            text-transform: uppercase;
+      @media screen and (min-width: $breakpoint-xl) {
+        @include col-span-8;
+        @include col-start-6;
+      }
+    }
+  }
+}
 
-            strong{
-                color: $fColorDark;
-            }
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
 
-            @media screen and (min-width: $breakpoint-xl) {
-                @include col-span-4;
-                font-size: 2.5rem;
-                line-height: 3.0625rem;
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+  }
 
-            }
-        }
+  &.mySwiper2 {
+    height: 80%;
+    width: 100%;
 
-        .desc{
-            @include col-span-12;
-            font-weight: 600;
+    .swiper-slide {
+      height: 21.875rem;
+      @media screen and (min-width: $breakpoint-xl) {
+        height: 34.375rem;
+      }
+    }
+  }
 
-            @media screen and (min-width: $breakpoint-xl) {
-                @include col-span-8;
-                @include col-start-6;
-            } 
-        }
+  &.mySwiper {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+
+    .swiper-slide {
+      width: 25%;
+      height: 6.25rem;
+      opacity: 0.7;
+    }
+
+    .swiper-slide-thumb-active {
+      opacity: 1;
+    }
+  }
+}
+
+#imageModal {
+  display: flex;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  img {
+    object-fit: contain;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  &::after {
+    content: "" !important;
+    background-image: url("../../dist/icons/top-white.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 4.375rem;
+    width: 4.375rem;
+  }
+}
+
+.swiper-button-next{
+    &::after {
+        transform: rotate(90deg);
+    }
+}
+
+.swiper-button-prev{
+    &::after {
+        transform: rotate(270deg);
     }
 }
